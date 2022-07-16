@@ -51,8 +51,13 @@ class App extends React.Component {
   };
 
   handleOperator(e) {
+    let str = this.state.formula; 
+    let regex = /[*+\/-]/g
+    if(e.target.value !== "-" && regex.test(this.state.output) === true) {
+      str = str.replace(regex, '');
+    }
     this.setState(prevState => ({
-      formula: prevState.formula + e.target.value,
+      formula: str + e.target.value,
       output: e.target.value
     }));
   }
