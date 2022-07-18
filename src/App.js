@@ -13,7 +13,7 @@ class App extends React.Component {
     this.handleOperator = this.handleOperator.bind(this);
     this.handleEq = this.handleEq.bind(this);
     this.handleDec = this.handleDec.bind(this);
-  };;
+  };
 
   handleNum(e) {
     if(e.target.value === "0" && this.state.formula === "0") {
